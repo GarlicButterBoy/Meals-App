@@ -1,6 +1,5 @@
 import { View, FlatList, Text, StyleSheet } from "react-native";
 import { MEALS } from "../data/dummy-data";
-import MealItem from "../components/MealItem";
 
 function MealsOverviewScreen({ route }) {
   const catId = route.params.categoryId;
@@ -9,7 +8,11 @@ function MealsOverviewScreen({ route }) {
   });
 
   function renderMealItem(itemData) {
-    return <MealItem title={itemData.item.title } />;
+    return (
+      <View>
+        <Text></Text>
+      </View>
+    );
   }
 
   return (

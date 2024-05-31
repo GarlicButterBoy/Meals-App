@@ -5,9 +5,7 @@ import { FlatList } from "react-native";
 function CategoriesScreen({ navigation }) {
   function renderCategoryItem(itemData) {
     function pressHandler() {
-      navigation.navigate("MealsOverview", {
-        categoryId: itemData.item.id,
-      });
+      navigation.navigate("MealsOverview", {});
     }
     return (
       <CategoryGridTile
