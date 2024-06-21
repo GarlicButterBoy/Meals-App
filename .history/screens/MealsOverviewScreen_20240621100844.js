@@ -17,7 +17,15 @@ function MealsOverviewScreen({ route }) {
       duration: item.duration,
       affordability: item.affordability,
     };
-    return <MealItem {...mealItemProps} />;
+    return (
+      <MealItem
+        title={title}
+        imageUrl={imageUrl}
+        complexity={complexity}
+        duration={itemData.item.duration}
+        affordability={itemData.item.affordability}
+      />
+    );
   }
 
   return (

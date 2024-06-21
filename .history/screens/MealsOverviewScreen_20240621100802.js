@@ -12,12 +12,20 @@ function MealsOverviewScreen({ route }) {
     const item = itemData.item;
     const mealItemProps = {
       title: item.title,
-      imageUrl: item.imageUrl,
-      complexity: item.complexity,
-      duration: item.duration,
-      affordability: item.affordability,
+      title: item.title,
+      title: item.title,
+      title: item.title,
+      title: item.title,
     };
-    return <MealItem {...mealItemProps} />;
+    return (
+      <MealItem
+        title={itemData.item.title}
+        imageUrl={itemData.item.imageUrl}
+        complexity={itemData.item.complexity}
+        duration={itemData.item.duration}
+        affordability={itemData.item.affordability}
+      />
+    );
   }
 
   return (

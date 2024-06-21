@@ -10,11 +10,8 @@ import {
 function MealItem({ title, imageUrl, duration, complexity, affordability }) {
   return (
     <View style={styles.mealItem}>
-      <Pressable
-        android_ripple={{ color: "#ccc" }}
-        style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
-      >
-        <View style={styles.innerContainer}>
+      <Pressable>
+        <View >
           <Image source={{ uri: imageUrl }} style={styles.image} />
           <Text style={styles.title}>{title}</Text>
         </View>
