@@ -9,7 +9,7 @@ function MealsOverviewScreen({ route, navigation }) {
     return mealItem.categoryIds.indexOf(catId) >= 0;
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const categoryTitle = CATEGORIES.find(
       (category) => category.id === catId
     ).title;

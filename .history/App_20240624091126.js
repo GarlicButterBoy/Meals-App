@@ -35,7 +35,7 @@ export default function App() {
             //   return {
             //     title: catId,
             //   };
-            // }}
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
