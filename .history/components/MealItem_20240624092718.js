@@ -18,18 +18,16 @@ function MealItem({
 }) {
   const navigation = useNavigation();
 
-  function selectMealItemHandler() {
-    navigation.navigate("MealDetail", {
-      mealId: id,
-    });
-  }
+  function selectMealItemHandler()
 
+  navigation.navigate("MealDetail", {
+    mealId: id,
+  });
   return (
     <View style={styles.mealItem}>
       <Pressable
         android_ripple={{ color: "#ccc" }}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
-        onPress={selectMealItemHandler}
       >
         <View style={styles.innerContainer}>
           <Image source={{ uri: imageUrl }} style={styles.image} />
