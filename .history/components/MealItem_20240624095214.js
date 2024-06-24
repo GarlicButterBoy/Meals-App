@@ -36,11 +36,7 @@ function MealItem({
           <Image source={{ uri: imageUrl }} style={styles.image} />
           <Text style={styles.title}>{title}</Text>
         </View>
-        <MealDetails
-          duration={duration}
-          complexity={complexity}
-          affordability={affordability}
-        />
+        <MealDetails/>
       </Pressable>
     </View>
   );
@@ -74,4 +70,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     margin: 8,
   },
+  
 });

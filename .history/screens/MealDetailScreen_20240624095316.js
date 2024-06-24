@@ -13,18 +13,13 @@ function MealDetailScreen({ route }) {
         <Image source={{ uri: selectedMeal.imageUrl }} />
         <Text>This is the Meal Detail Screen ({mealId})</Text>
         <MealDetails
-          duration={selectedMeal.duration}
-          complexity={selectedMeal.complexity}
-          affordability={selectedMeal.affordability}
+          duration={duration}
+          complexity={complexity}
+          affordability={affordability}
         />
         <Text>Ingredients</Text>
-        {selectedMeal.ingredients.map((ingredient) => (
-          <Text key={ingredient}>{ingredient}</Text>
-        ))}
+
         <Text>Steps</Text>
-        {selectedMeal.steps.map((steps) => (
-          <Text key={steps}>{steps}</Text>
-        ))}
       </View>
     </>
   );

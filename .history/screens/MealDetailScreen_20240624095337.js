@@ -15,16 +15,11 @@ function MealDetailScreen({ route }) {
         <MealDetails
           duration={selectedMeal.duration}
           complexity={selectedMeal.complexity}
-          affordability={selectedMeal.affordability}
+          affordability={affordability}
         />
         <Text>Ingredients</Text>
-        {selectedMeal.ingredients.map((ingredient) => (
-          <Text key={ingredient}>{ingredient}</Text>
-        ))}
+
         <Text>Steps</Text>
-        {selectedMeal.steps.map((steps) => (
-          <Text key={steps}>{steps}</Text>
-        ))}
       </View>
     </>
   );

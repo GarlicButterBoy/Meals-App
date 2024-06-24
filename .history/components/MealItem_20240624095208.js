@@ -37,10 +37,11 @@ function MealItem({
           <Text style={styles.title}>{title}</Text>
         </View>
         <MealDetails
-          duration={duration}
-          complexity={complexity}
-          affordability={affordability}
-        />
+        {/* <View style={styles.details}>
+          <Text style={styles.detailItem}>{duration}m</Text>
+          <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
+          <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
+        </View> */}
       </Pressable>
     </View>
   );
@@ -74,4 +75,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     margin: 8,
   },
+  
 });
