@@ -1,9 +1,7 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
-import Subtitle from "../components/MealDetail/Subtitle";
-import List from "../components/MealDetail/List";
 
 function MealDetailScreen({ route }) {
   const mealId = route.params.mealId;
@@ -11,7 +9,7 @@ function MealDetailScreen({ route }) {
 
   return (
     <>
-      <ScrollView style={styles.rootContainer}>
+      <View>
         <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
         <Text style={styles.title}>{selectedMeal.title}</Text>
         <MealDetails
@@ -20,15 +18,18 @@ function MealDetailScreen({ route }) {
           affordability={selectedMeal.affordability}
           textStyle={styles.detailText}
         />
-        <View style={styles.listOuterContainer}>
-          <View style={styles.listContainer}>
-            <Subtitle>Ingredients</Subtitle>
-            <List data={selectedMeal.ingredients} />
-            <Subtitle>Steps</Subtitle>
-            <List data={selectedMeal.steps} />
-          </View>
+        <View>
+          <Text style={styles.subtitle}>Ingredients</Text>
         </View>
-      </ScrollView>
+        {selectedMeal.ingredients.map((ingredient) => (
+          <Text key={ingredient}>{ingredient}</Text>
+        ))}
+              <View></View>
+        <Text style={styles.subtitle}>Steps</Text>
+        {selectedMeal.steps.map((steps) => (
+          <Text key={steps}>{steps}</Text>
+        ))}
+      </View>
     </>
   );
 }
@@ -50,13 +51,14 @@ const styles = StyleSheet.create({
   detailText: {
     color: "white",
   },
-  listOuterContainer: {
-    alignItems: "center",
-  },
-  listContainer: {
-    width: "80%",
-  },
-  rootContainer: {
-    marginBottom: 32,
+  subtitle: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+    padding: 6,
+    margin: 4,
+    textAlign: "center",
+    borderBottomColor: "white",
+    borderBottomWidth: 2,
   },
 });

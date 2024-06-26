@@ -11,7 +11,7 @@ function MealDetailScreen({ route }) {
 
   return (
     <>
-      <ScrollView style={styles.rootContainer}>
+      <ScrollView style>
         <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
         <Text style={styles.title}>{selectedMeal.title}</Text>
         <MealDetails

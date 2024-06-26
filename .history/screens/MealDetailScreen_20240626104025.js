@@ -11,7 +11,7 @@ function MealDetailScreen({ route }) {
 
   return (
     <>
-      <ScrollView style={styles.rootContainer}>
+      <ScrollView>
         <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
         <Text style={styles.title}>{selectedMeal.title}</Text>
         <MealDetails
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     width: "80%",
-  },
-  rootContainer: {
-    marginBottom: 32,
-  },
+    },
+    rootContainer: {
+      marginBottom: 32,
+  }
 });

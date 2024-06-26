@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MealDetail/Subtitle";
@@ -11,7 +11,7 @@ function MealDetailScreen({ route }) {
 
   return (
     <>
-      <ScrollView style={styles.rootContainer}>
+      <View>
         <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
         <Text style={styles.title}>{selectedMeal.title}</Text>
         <MealDetails
@@ -28,7 +28,7 @@ function MealDetailScreen({ route }) {
             <List data={selectedMeal.steps} />
           </View>
         </View>
-      </ScrollView>
+      </View>
     </>
   );
 }
@@ -50,13 +50,10 @@ const styles = StyleSheet.create({
   detailText: {
     color: "white",
   },
-  listOuterContainer: {
+  listOuterConter: {
     alignItems: "center",
   },
   listContainer: {
     width: "80%",
-  },
-  rootContainer: {
-    marginBottom: 32,
   },
 });
