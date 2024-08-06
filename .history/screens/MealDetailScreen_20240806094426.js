@@ -17,7 +17,7 @@ function MealDetailScreen({ route, navigation }) {
     if (mealIsFavorite) {
       favoriteMealsCtx.removeFavorite(mealId);
     } else {
-      favoriteMealsCtx.addFavorite(mealId);
+      
     }
   }
 

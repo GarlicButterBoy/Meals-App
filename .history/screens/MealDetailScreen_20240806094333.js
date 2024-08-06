@@ -13,12 +13,8 @@ function MealDetailScreen({ route, navigation }) {
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
   const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId);
 
-  function changeFavoriteStatusHandler() {
-    if (mealIsFavorite) {
-      favoriteMealsCtx.removeFavorite(mealId);
-    } else {
-      favoriteMealsCtx.addFavorite(mealId);
-    }
+  function headerButtonPressHandler() {
+    console.log("Pressed!");
   }
 
   useLayoutEffect(() => {
@@ -26,14 +22,14 @@ function MealDetailScreen({ route, navigation }) {
       headerRight: () => {
         return (
           <IconButton
-            icon={mealIsFavorite ? "star" : "star-outline"}
+            icon={mealIsFavorite ? 'star' : 'star-outline'}
             color="white"
-            onPress={changeFavoriteStatusHandler}
+            onPress={headerButtonPressHandler}
           />
         );
       },
     });
-  }, [navigation, changeFavoriteStatusHandler]);
+  }, [navigation, headerButtonPressHandler]);
 
   return (
     <>

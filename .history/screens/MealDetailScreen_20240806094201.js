@@ -5,20 +5,14 @@ import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MealDetail/Subtitle";
 import List from "../components/MealDetail/List";
-import { FavoritesContext } from "../store/context/favorites-context";
 
 function MealDetailScreen({ route, navigation }) {
-  const favoriteMealsCtx = useContext(FavoritesContext);
+  const favoriteMealsCtx = useContext(Favo);
   const mealId = route.params.mealId;
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
-  const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId);
 
-  function changeFavoriteStatusHandler() {
-    if (mealIsFavorite) {
-      favoriteMealsCtx.removeFavorite(mealId);
-    } else {
-      favoriteMealsCtx.addFavorite(mealId);
-    }
+  function headerButtonPressHandler() {
+    console.log("Pressed!");
   }
 
   useLayoutEffect(() => {
@@ -26,14 +20,14 @@ function MealDetailScreen({ route, navigation }) {
       headerRight: () => {
         return (
           <IconButton
-            icon={mealIsFavorite ? "star" : "star-outline"}
+            icon="star"
             color="white"
-            onPress={changeFavoriteStatusHandler}
+            onPress={headerButtonPressHandler}
           />
         );
       },
     });
-  }, [navigation, changeFavoriteStatusHandler]);
+  }, [navigation, headerButtonPressHandler]);
 
   return (
     <>

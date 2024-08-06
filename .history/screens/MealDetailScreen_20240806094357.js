@@ -14,11 +14,7 @@ function MealDetailScreen({ route, navigation }) {
   const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId);
 
   function changeFavoriteStatusHandler() {
-    if (mealIsFavorite) {
-      favoriteMealsCtx.removeFavorite(mealId);
-    } else {
-      favoriteMealsCtx.addFavorite(mealId);
-    }
+    console.log("Pressed!");
   }
 
   useLayoutEffect(() => {
@@ -33,7 +29,7 @@ function MealDetailScreen({ route, navigation }) {
         );
       },
     });
-  }, [navigation, changeFavoriteStatusHandler]);
+  }, [navigation, headerButtonPressHandler]);
 
   return (
     <>
