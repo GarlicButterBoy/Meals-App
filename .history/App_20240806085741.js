@@ -12,18 +12,8 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: "#351401" },
-        headerTintColor: "white",
-        sceneContainerStyle: { backgroundColor: "#3f2f25" },
-      }}
-    >
-      <Drawer.Screen
-        name="Categories"
-        component={CategoriesScreen}
-        options={{ title: "All Categories" }}
-      />
+    <Drawer.Navigator >
+      <Drawer.Screen name="Categories" component={CategoriesScreen} />
       <Drawer.Screen name="Favorites" component={FavoritesScreen} />
     </Drawer.Navigator>
   );
@@ -36,11 +26,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="MealsCategories"
-          screenOptions={{
-            headerStyle: { backgroundColor: "#351401" },
-            headerTintColor: "white",
-            contentStyle: { backgroundColor: "#3f2f25" },
-          }}
+          
         >
           <Stack.Screen
             name="Drawer"
@@ -50,11 +36,7 @@ export default function App() {
             }}
           />
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
-          <Stack.Screen
-            name="MealDetail"
-            component={MealDetailScreen}
-            options={{ title: "About the Meal" }}
-          />
+          <Stack.Screen name="MealDetail" component={MealDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
