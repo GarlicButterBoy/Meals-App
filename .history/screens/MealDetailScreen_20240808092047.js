@@ -1,4 +1,4 @@
-import { useLayoutEffect, useContext } from "react";
+import { useLayoutEffect, useContext, useDispatch, useSelector } from "react";
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import IconButton from "../components/IconButton";
 import { MEALS } from "../data/dummy-data";
@@ -11,7 +11,9 @@ import { addFavorite, removeFavorite } from "../store/redux/favorites";
 
 function MealDetailScreen({ route, navigation }) {
   // const favoriteMealsCtx = useContext(FavoritesContext);
-  const favoriteMealIds = useSelector((state) => state.favoriteMeals.ids);
+  const favoriteMealIds = useSelector((state) => {
+    state.favoriteMeals.ids;
+  });
   const dispatch = useDispatch();
 
   const mealId = route.params.mealId;

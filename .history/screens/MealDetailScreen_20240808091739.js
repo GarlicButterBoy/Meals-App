@@ -11,7 +11,9 @@ import { addFavorite, removeFavorite } from "../store/redux/favorites";
 
 function MealDetailScreen({ route, navigation }) {
   // const favoriteMealsCtx = useContext(FavoritesContext);
-  const favoriteMealIds = useSelector((state) => state.favoriteMeals.ids);
+  const favoriteMealIds = useSelector((state) => {
+    state.favoriteMeals.ids;
+  });
   const dispatch = useDispatch();
 
   const mealId = route.params.mealId;
@@ -21,10 +23,10 @@ function MealDetailScreen({ route, navigation }) {
   function changeFavoriteStatusHandler() {
     if (mealIsFavorite) {
       // favoriteMealsCtx.removeFavorite(mealId);
-      dispatch(removeFavorite({ id: mealId }));
+      dispatch(removeFavorite({mealId}));
     } else {
       // favoriteMealsCtx.addFavorite(mealId);
-      dispatch(addFavorite({ id: mealId }));
+      dispatch(addFavorite());
     }
   }
 

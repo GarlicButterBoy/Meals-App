@@ -54,7 +54,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <Provider store={store}>
+      <Provider>
         {/* <FavoritesContextProvider> */}
         <NavigationContainer>
           <Stack.Navigator
