@@ -16,8 +16,8 @@ function MealsOverviewScreen({ route, navigation }) {
       title: categoryTitle,
     });
   }, [catId, navigation]);
-
-  return <MealsList items={displayedMeals} />;
 }
+
+return <MealsList />;
 
 export default MealsOverviewScreen;

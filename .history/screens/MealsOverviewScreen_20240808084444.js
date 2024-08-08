@@ -1,6 +1,7 @@
 import { useLayoutEffect } from "react";
+import { View, FlatList, Text, StyleSheet } from "react-native";
 import { MEALS, CATEGORIES } from "../data/dummy-data";
-import MealsList from "../components/MealsList/MealsList";
+
 
 function MealsOverviewScreen({ route, navigation }) {
   const catId = route.params.categoryId;
@@ -17,7 +18,9 @@ function MealsOverviewScreen({ route, navigation }) {
     });
   }, [catId, navigation]);
 
-  return <MealsList items={displayedMeals} />;
+  
 }
 
 export default MealsOverviewScreen;
+
+

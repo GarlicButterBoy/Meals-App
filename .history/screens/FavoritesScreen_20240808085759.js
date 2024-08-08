@@ -13,7 +13,7 @@ function FavoritesScreen() {
   if (favoriteMeals.length === 0) {
     return (
       <View style={styles.rootContainer}>
-        <Text style={styles.text}>You have no favorite meals yet.</Text>
+        <Text>You have no favorite meals yet.</Text>
       </View>
     );
   }
